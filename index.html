@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>nexdenai — AI Automation &amp; Web Developer</title>
+  <meta name="description" content="AI-автоматизация, веб-разработка, современные сайты и цифровые системы для бизнеса. Разработка сайтов, AI-ассистентов и автоматизация воронок продаж.">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-canvas text-primary antialiased selection:bg-neutral-900 selection:text-white">
+
+  <!-- ==================================================
+       1. HEADER / NAVIGATION (Sticky Glassmorphism)
+       ================================================== -->
+  <header id="site-header" class="site-header">
+    <div class="header-inner container-custom">
+      <!-- Logo -->
+      <a href="#hero" class="logo-link group" aria-label="nexdenai главная">
+        <span class="logo-mark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span class="logo-text">nexden<span class="logo-accent">ai</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Основное меню">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Главная</a></li>
+          <li><a href="#solutions" class="nav-link">Решения</a></li>
+          <li><a href="#niches" class="nav-link">Для кого</a></li>
+          <li><a href="#scenarios" class="nav-link">Сценарии</a></li>
+          <li><a href="#about" class="nav-link">Обо мне</a></li>
+          <li><a href="#contacts" class="nav-link">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Action -->
+      <div class="header-actions">
+        <a href="#contacts" class="btn btn-sm btn-primary header-cta">
+          <span>Связаться</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Trigger (iOS Liquid Glass Circular Capsule) -->
+        <button id="mobile-menu-btn" class="mobile-toggle" aria-label="Открыть меню" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Overlay (Light iOS Glass Menu) -->
+    <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
+      <div class="mobile-drawer-sheet">
+        <div class="mobile-drawer-header">
+          <span class="mobile-drawer-brand">nexdenai</span>
+          <button id="mobile-drawer-close" class="mobile-drawer-close" aria-label="Закрыть меню">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="mobile-drawer-content">
+          <nav class="mobile-nav" aria-label="Мобильное меню">
+            <ul class="mobile-nav-links">
+              <li><a href="#hero" class="mobile-nav-link">Главная</a></li>
+              <li><a href="#solutions" class="mobile-nav-link">Решения</a></li>
+              <li><a href="#niches" class="mobile-nav-link">Для кого</a></li>
+              <li><a href="#scenarios" class="mobile-nav-link">Сценарии</a></li>
+              <li><a href="#about" class="mobile-nav-link">Обо мне</a></li>
+              <li><a href="#contacts" class="mobile-nav-link">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="mobile-drawer-footer">
+            <a href="https://t.me/farruuxz" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-full">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.37.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+              </svg>
+              <span>Написать в Telegram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================================================
+         2. HERO SECTION
+         ================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="container-custom">
+        <div class="hero-content">
+          <!-- Positioning Badge -->
+          <div class="hero-badge reveal">
+            <span class="badge-dot"></span>
+            <span class="badge-text">AI Automation &amp; Web Developer</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="hero-title reveal delay-1">
+            AI-автоматизация и веб-разработка для бизнеса
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="hero-subtitle reveal delay-2">
+            Создаю современные сайты, AI-системы и веб-приложения, которые помогают бизнесу получать больше заявок, быстрее обрабатывать клиентов и автоматизировать рутинные процессы.
+          </p>
+
+          <!-- Target Niches Line -->
+          <div class="hero-niches-line reveal delay-3">
+            <span class="niches-prefix">Комплекс решений:</span>
+            <span class="niches-tags">Сайты • AI-ассистенты • CRM-интеграции • Telegram • Web Apps • Автоматизация заявок</span>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="hero-actions reveal delay-4">
+            <a href="#solutions" class="btn btn-primary">
+              <span>Посмотреть решения</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </a>
+            <a href="#contacts" class="btn btn-secondary">
+              <span>Обсудить проект</span>
+            </a>
+          </div>
+
+          <!-- Premium Interactive Visual Pipeline -->
+          <div class="pipeline-container reveal delay-5">
+            <div class="pipeline-header">
+              <div class="pipeline-status">
+                <span class="live-pulse"></span>
+                <span>Архитектура потока входящего лида</span>
+              </div>
+              <div class="pipeline-caption">Обработка без участия человека до этапа закрытия</div>
+            </div>
+
+            <div class="pipeline-flow">
+              <!-- Node 1 -->
+              <div class="pipeline-node" data-step="1">
+                <div class="node-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </div>
+                <div class="node-meta">
+                  <span class="node-step">01. Вход</span>
+                  <span class="node-title">Telegram / Instagram / Сайт</span>
+                  <span class="node-desc">Входящее обращение</span>
+                </div>
+              </div>
+
+              <!-- Connector 1 -->
+              <div class="pipeline-connector">
+                <div class="connector-line">
+                  <div class="connector-pulse"></div>
+                </div>
+                <div class="connector-arrow">↓</div>
+              </div>
+
+              <!-- Node 2 -->
+              <div class="pipeline-node highlight-node" data-step="2">
+                <div class="node-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                  </svg>
+                </div>
+                <div class="node-meta">
+                  <span class="node-step">02. Интеллект</span>
+                  <span class="node-title">AI-ассистент</span>
+                  <span class="node-desc">Мгновенный ответ 24/7</span>
+                </div>
+              </div>
+
+              <!-- Connector 2 -->
+              <div class="pipeline-connector">
+                <div class="connector-line">
+                  <div class="connector-pulse"></div>
+                </div>
+                <div class="connector-arrow">↓</div>
+              </div>
+
+              <!-- Node 3 -->
+              <div class="pipeline-node" data-step="3">
+                <div class="node-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 11 12 14 22 4"></polyline>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                  </svg>
+                </div>
+                <div class="node-meta">
+                  <span class="node-step">03. Фильтр</span>
+                  <span class="node-title">Квалификация лида</span>
+                  <span class="node-desc">Бюджет, сроки, запрос</span>
+                </div>
+              </div>
+
+              <!-- Connector 3 -->
+              <div class="pipeline-connector">
+                <div class="connector-line">
+                  <div class="connector-pulse"></div>
+                </div>
+                <div class="connector-arrow">↓</div>
+              </div>
+
+              <!-- Node 4 -->
+              <div class="pipeline-node" data-step="4">
+                <div class="node-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                  </svg>
+                </div>
+                <div class="node-meta">
+                  <span class="node-step">04. Данные</span>
+                  <span class="node-title">CRM / Google Sheets</span>
+                  <span class="node-desc">Авто-запись карточки</span>
+                </div>
+              </div>
+
+              <!-- Connector 4 -->
+              <div class="pipeline-connector">
+                <div class="connector-line">
+                  <div class="connector-pulse"></div>
+                </div>
+                <div class="connector-arrow">↓</div>
+              </div>
+
+              <!-- Node 5 -->
+              <div class="pipeline-node" data-step="5">
+                <div class="node-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <polyline points="16 11 18 13 22 9"></polyline>
+                  </svg>
+                </div>
+                <div class="node-meta">
+                  <span class="node-step">05. Сделка</span>
+                  <span class="node-title">Менеджер</span>
+                  <span class="node-desc">Готовый к оплате клиент</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- ==================================================
+         2.1 ДВА ОСНОВНЫХ НАПРАВЛЕНИЯ
+         ================================================== -->
+    <section id="directions" class="section section-bordered">
+      <div class="container-custom">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-tag">Комплексный подход</span>
+          <h2 class="section-title">Два направления, одна задача — рост бизнеса</h2>
+          <p class="section-subtitle">
+            Не просто разрозненные инструменты, а целостная цифровая система: от первого визита клиента на сайт до закрытия сделки в CRM.
+          </p>
+        </div>
+
+        <div class="directions-grid">
+          <!-- Direction 1: AI Automation -->
+          <div class="direction-card">
+            <div class="direction-badge-wrap">
+              <span class="direction-badge">Направление 01</span>
+              <span class="direction-badge-tag">AI &amp; Automation</span>
+            </div>
+            <div class="direction-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-4 4 4 4 0 0 1-4-4V6a4 4 0 0 1 4-4z"></path>
+                <path d="M18 14a6 6 0 0 1 6 6v2H0v-2a6 6 0 0 1 6-6h12z"></path>
+              </svg>
+            </div>
+            <h3 class="direction-title">AI-автоматизация бизнес-процессов</h3>
+            <p class="direction-desc">
+              Разработка умных диалоговых систем и автоматических сценариев, которые берут на себя рутинную коммуникацию с клиентами и мгновенную обработку входящего потока.
+            </p>
+            <ul class="direction-list">
+              <li>
+                <span class="direction-check">✓</span>
+                <span>AI-ассистенты для продаж и поддержки 24/7</span>
+              </li>
+              <li>
+                <span class="direction-check">✓</span>
+                <span>Автоматическая квалификация лидов и сбор данных</span>
+              </li>
+              <li>
+                <span class="direction-check">✓</span>
+                <span>Интеграция с Telegram и Instagram Direct</span>
+              </li>
+              <li>
+                <span class="direction-check">✓</span>
+                <span>Прямая передача заявок в CRM и Google Sheets</span>
+              </li>
+              <li>
+                <span class="direction-check">✓</span>
+                <span>Мгновенные уведомления ответственным менеджерам</span>
+              </li>
+            </ul>
+            <div class="direction-flow-box">
+              <div class="flow-box-title">Сценарий работы:</div>
+              <div class="flow-box-path">
+                <span>Клиент пишет</span>
+                <span class="flow-arr">→</span>
+                <span>AI отвечает</span>
+                <span class="flow-arr">→</span>
+                <span>Квалификация</span>
+                <span class="flow-arr">→</span>
+                <span>Сбор данных</span>
+                <span class="flow-arr">→</span>
+                <span class="flow-target">Заявка менеджеру</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direction 2: Web Development -->
+          <div class="direction-card">
+            <div class="direction-badge-wrap">
+              <span class="direction-badge">Направление 02</span>
+              <span class="direction-badge-tag">Web Development</span>
+            </div>
+            <div class="direction-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="direction-title">Современные сайты и веб-приложения</h3>
+            <p class="direction-desc">
+              Создание быстрых, конверсионных сайтов и веб-сервисов с премиальным дизайном, чистым кодом и готовой архитектурой под автоматизацию продаж.
+            </p>
+            <ul class="direction-list">
+              <li>
+                <span class="direction-check">✓</span>
+                <span>Конверсионные лендинги и промо-страницы</span>
+              </li>
+              <li>
+                <span class="direction-check">✓</span>
+                <span>Корпоративные сайты и платформы для услуг</span>
+              </li>
+              <li>
+                <span class="direction-check">✓</span>
+                <span>Сайты со встроенными AI-консультантами</span>
+              </li>
+              <li>
+                <span class="direction-check">✓</span>
+                <span>Веб-приложения и кастомные калькуляторы</span>
+              </li>
+              <li>
+                <span class="direction-check">✓</span>
+                <span>Telegram Web Apps (Mini Apps внутри Telegram)</span>
+              </li>
+            </ul>
+            <div class="direction-flow-box">
+              <div class="flow-box-title">Сценарий работы:</div>
+              <div class="flow-box-path">
+                <span>Визит на сайт</span>
+                <span class="flow-arr">→</span>
+                <span>Заявка онлайн</span>
+                <span class="flow-arr">→</span>
+                <span>Авто-запись в CRM</span>
+                <span class="flow-arr">→</span>
+                <span class="flow-target">Менеджер в курсе</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         3. ОБО МНЕ
+         ================================================== -->
+    <section id="about" class="section section-bordered">
+      <div class="container-custom">
+        <div class="about-grid">
+          <div class="about-lead">
+            <span class="section-tag">Профиль специалиста</span>
+            <h2 class="section-title">Обо мне</h2>
+          </div>
+
+          <div class="about-content">
+            <div class="about-card">
+              <p class="about-text-lead">
+                Я AI Automation &amp; Web Developer.
+              </p>
+              <p class="about-text">
+                Создаю для бизнеса современные сайты, AI-системы и веб-приложения, которые помогают получать заявки, автоматизировать коммуникацию с клиентами и связывать продажи с CRM и внутренними процессами. Моя задача — не просто написать код или сделать красивый интерфейс, а собрать рабочую цифровую систему: от первого контакта клиента до передачи готовой заявки менеджеру.
+              </p>
+
+              <div class="about-focus-box">
+                <div class="focus-box-label">Моя ключевая задача</div>
+                <div class="focus-box-text">
+                  Объединить сайт, AI и продажи в единую бесшовную цепочку:
+                </div>
+                <div class="focus-pathway">
+                  <span>Сайт / Трафик</span>
+                  <span class="pathway-arrow">→</span>
+                  <span>Входящий запрос</span>
+                  <span class="pathway-arrow">→</span>
+                  <span>AI-квалификация</span>
+                  <span class="pathway-arrow">→</span>
+                  <span>CRM / Таблицы</span>
+                  <span class="pathway-arrow">→</span>
+                  <span>Сделка у менеджера</span>
+                </div>
+              </div>
+
+              <p class="about-text-conclusion">
+                Я помогаю бизнесу превращать входящий трафик в системные продажи, сокращать ручную работу команды и мгновенно реагировать на каждый лид.
+              </p>
+
+              <!-- Principles / Specs Grid -->
+              <div class="about-pillars">
+                <div class="pillar-item">
+                  <span class="pillar-label">Фокус</span>
+                  <span class="pillar-val">Web, AI &amp; CRM</span>
+                </div>
+                <div class="pillar-item">
+                  <span class="pillar-label">Каналы</span>
+                  <span class="pillar-val">Web, Telegram, Instagram</span>
+                </div>
+                <div class="pillar-item">
+                  <span class="pillar-label">Результат</span>
+                  <span class="pillar-val">Рост заявок и 0 потерь</span>
+                </div>
+                <div class="pillar-item">
+                  <span class="pillar-label">Подход</span>
+                  <span class="pillar-val">Комплексная инженерия</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         4. ДЛЯ КОГО Я РАБОТАЮ
+         ================================================== -->
+    <section id="niches" class="section">
+      <div class="container-custom">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-tag">Отрасли</span>
+          <h2 class="section-title">С кем я работаю</h2>
+          <p class="section-subtitle">
+            Работаю с бизнесами, где много входящих заявок и важна скорость ответа.
+          </p>
+        </div>
+
+        <div class="niches-grid">
+          <!-- Card 1 -->
+          <div class="card niche-card">
+            <div class="card-num">01</div>
+            <div class="niche-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+            <h3 class="niche-title">Учебные центры</h3>
+            <p class="niche-desc">
+              Конверсионные сайты образовательных программ + AI-консультант по расписанию, стоимости и мгновенный сбор контактов в CRM.
+            </p>
+            <div class="niche-tags">
+              <span>Сайты курсов</span>
+              <span>AI-консультант</span>
+              <span>CRM-запись</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card niche-card">
+            <div class="card-num">02</div>
+            <div class="niche-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <h3 class="niche-title">Клиники и стоматологии</h3>
+            <p class="niche-desc">
+              Современный сайт медицинского центра с удобной формой записи + AI-сортировка первичных обращений и запись к специалисту.
+            </p>
+            <div class="niche-tags">
+              <span>Сайт клиники</span>
+              <span>Онлайн-запись</span>
+              <span>AI-сортировка</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card niche-card">
+            <div class="card-num">03</div>
+            <div class="niche-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            <h3 class="niche-title">Недвижимость</h3>
+            <p class="niche-desc">
+              Презентационные сайты жилых комплексов и объектов + AI-квалификация бюджета, района и готовности к просмотру перед звонком риелтора.
+            </p>
+            <div class="niche-tags">
+              <span>Сайты объектов</span>
+              <span>Квалификация</span>
+              <span>CRM-воронка</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card niche-card">
+            <div class="card-num">04</div>
+            <div class="niche-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <h3 class="niche-title">Автосалоны</h3>
+            <p class="niche-desc">
+              Онлайн-каталог автомобилей + AI-подбор модели, расчет условий кредита, трейд-ин и автоматическая запись на тест-драйв.
+            </p>
+            <div class="niche-tags">
+              <span>Каталог авто</span>
+              <span>AI-подбор</span>
+              <span>Тест-драйв</span>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card niche-card">
+            <div class="card-num">05</div>
+            <div class="niche-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"></path>
+              </svg>
+            </div>
+            <h3 class="niche-title">Travel-агентства</h3>
+            <p class="niche-desc">
+              Промо-страницы направлений + AI-сбор дат, бюджета, количества путешественников и передача готовой заявки туроператору.
+            </p>
+            <div class="niche-tags">
+              <span>Сайты туров</span>
+              <span>AI-сбор дат</span>
+              <span>Готовый лид</span>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="card niche-card">
+            <div class="card-num">06</div>
+            <div class="niche-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+              </svg>
+            </div>
+            <h3 class="niche-title">Beauty и косметология</h3>
+            <p class="niche-desc">
+              Эстетичный сайт салона или мастера + круглосуточная AI-запись на процедуры в Telegram и автоматические напоминания.
+            </p>
+            <div class="niche-tags">
+              <span>Сайт услуг</span>
+              <span>AI-запись</span>
+              <span>Telegram TMA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         5. КАКИЕ ПРОБЛЕМЫ Я АВТОМАТИЗИРУЮ
+         ================================================== -->
+    <section class="section section-bordered bg-subtle">
+      <div class="container-custom">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-tag">Оптимизация процессов</span>
+          <h2 class="section-title">Какие проблемы я автоматизирую</h2>
+          <p class="section-subtitle">
+            Устраняю системные разрывы, из-за которых бизнес теряет лиды и деньги.
+          </p>
+        </div>
+
+        <div class="problems-grid">
+          <div class="problem-card">
+            <div class="problem-status-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h4 class="problem-title">Клиенты долго ждут ответа</h4>
+            <p class="problem-note">Задержка в 15 минут снижает конверсию в сделку в разы.</p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-status-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h4 class="problem-title">Администраторы отвечают на одни и те же вопросы</h4>
+            <p class="problem-note">Сотрудники выгорают на рутинных консультациях вместо продаж.</p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-status-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h4 class="problem-title">Заявки приходят вне рабочего времени</h4>
+            <p class="problem-note">Ночью и в выходные клиенты уходят к тем, кто отвечает моментально.</p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-status-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h4 class="problem-title">Потенциальные клиенты теряются</h4>
+            <p class="problem-note">Переписки тонут в директе Instagram и чатах Telegram без фиксации.</p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-status-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h4 class="problem-title">Квалификация лидов делается вручную</h4>
+            <p class="problem-note">Менеджер тратит десятки минут, чтобы просто узнать бюджет и задачу.</p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-status-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h4 class="problem-title">CRM или Google Sheets заполняются вручную</h4>
+            <p class="problem-note">Человеческий фактор: опечатки, забытые поля, пропущенные номера.</p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-status-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h4 class="problem-title">Менеджеры тратят время на нецелевые заявки</h4>
+            <p class="problem-note">Дорогие часы опытных сейлзов тратятся на спам и нецелевой трафик.</p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-status-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h4 class="problem-title">Данные о лидах хранятся хаотично</h4>
+            <p class="problem-note">Нет единой базы, истории диалога и прозрачной сквозной картины.</p>
+          </div>
+        </div>
+
+        <!-- Problem Banner Key Takeaway -->
+        <div class="problem-statement-card">
+          <div class="statement-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <div class="statement-text">
+            AI-автоматизация забирает рутинные действия и оставляет менеджерам работу с реальными продажами.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         6. ЧТО Я СОЗДАЮ
+         ================================================== -->
+    <section id="solutions" class="section">
+      <div class="container-custom">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-tag">Каталог решений</span>
+          <h2 class="section-title">Что я создаю</h2>
+          <p class="section-subtitle">
+            Решения в области AI-автоматизации и современной веб-разработки, объединяемые в единую систему роста продаж.
+          </p>
+        </div>
+
+        <!-- Category 1: AI Automation -->
+        <div class="services-category-header">
+          <div class="category-meta">
+            <span class="category-pill">Категория 01</span>
+            <span class="category-count">9 решений</span>
+          </div>
+          <h3 class="category-title">AI-автоматизация бизнес-процессов</h3>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <span class="service-badge">24/7 Response</span>
+            </div>
+            <h3 class="service-title">AI-администратор</h3>
+            <p class="service-desc">
+              Отвечает на входящие сообщения 24/7, закрывает типовые вопросы и собирает данные клиента.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <span class="service-badge">Sales Engine</span>
+            </div>
+            <h3 class="service-title">AI Sales Assistant</h3>
+            <p class="service-desc">
+              Понимает запрос клиента, задает нужные вопросы и подготавливает лид для менеджера по продажам.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <span class="service-badge">Smart Filter</span>
+            </div>
+            <h3 class="service-title">Квалификация лидов</h3>
+            <p class="service-desc">
+              Автоматически уточняет потребность, бюджет, направление, сроки и другие важные параметры.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </div>
+              <span class="service-badge">Messaging</span>
+            </div>
+            <h3 class="service-title">Автоматизация Telegram</h3>
+            <p class="service-desc">
+              Обрабатывает обращения из Telegram и переводит их в структурированный процесс.
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+              <span class="service-badge">Direct Inbound</span>
+            </div>
+            <h3 class="service-title">Автоматизация Instagram</h3>
+            <p class="service-desc">
+              Помогает автоматизировать обработку входящих заявок из Instagram и передавать данные дальше по воронке.
+            </p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <span class="service-badge">Sync Core</span>
+            </div>
+            <h3 class="service-title">CRM-интеграция</h3>
+            <p class="service-desc">
+              Передает данные клиента напрямую в CRM.
+            </p>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <span class="service-badge">Database</span>
+            </div>
+            <h3 class="service-title">Google Sheets Automation</h3>
+            <p class="service-desc">
+              Автоматически записывает структурированные данные о лидах.
+            </p>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+              </div>
+              <span class="service-badge">Instant Alert</span>
+            </div>
+            <h3 class="service-title">Уведомления менеджеру</h3>
+            <p class="service-desc">
+              Отправляет квалифицированный лид ответственному менеджеру.
+            </p>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <span class="service-badge">Calendar</span>
+            </div>
+            <h3 class="service-title">Booking / запись</h3>
+            <p class="service-desc">
+              Собирает заявки на консультацию, встречу, запись или бронь.
+            </p>
+          </div>
+        </div>
+
+        <!-- Category 2: Web Development -->
+        <div class="services-category-header services-category-header-web">
+          <div class="category-meta">
+            <span class="category-pill">Категория 02</span>
+            <span class="category-count">7 решений</span>
+          </div>
+          <h3 class="category-title">Веб-разработка для бизнеса</h3>
+        </div>
+
+        <div class="services-grid">
+          <!-- Web Card 1 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <span class="service-badge">High Conversion</span>
+            </div>
+            <h3 class="service-title">Конверсионные лендинги</h3>
+            <p class="service-desc">
+              Продающие одностраничные сайты под рекламу с высокой конверсией, быстрой загрузкой и чистым дизайном.
+            </p>
+          </div>
+
+          <!-- Web Card 2 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+              <span class="service-badge">Corporate Web</span>
+            </div>
+            <h3 class="service-title">Корпоративные сайты</h3>
+            <p class="service-desc">
+              Представительские сайты для компаний с презентацией услуг, кейсов, доверием к бренду и удобной навигацией.
+            </p>
+          </div>
+
+          <!-- Web Card 3 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                </svg>
+              </div>
+              <span class="service-badge">Service Portals</span>
+            </div>
+            <h3 class="service-title">Сайты для сферы услуг</h3>
+            <p class="service-desc">
+              Сайты для клиник, образовательных центров, агентств и автосалонов с онлайн-записью и каталогом услуг.
+            </p>
+          </div>
+
+          <!-- Web Card 4 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+              </div>
+              <span class="service-badge">Smart AI Web</span>
+            </div>
+            <h3 class="service-title">AI-сайты и умные формы</h3>
+            <p class="service-desc">
+              Сайты со встроенными AI-консультантами, которые отвечают на вопросы посетителей и квалифицируют клиентов прямо на странице.
+            </p>
+          </div>
+
+          <!-- Web Card 5 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <span class="service-badge">Web Apps</span>
+            </div>
+            <h3 class="service-title">Веб-приложения и калькуляторы</h3>
+            <p class="service-desc">
+              Интерактивные расчетные калькуляторы, личные кабинеты, каталоги и сервисные веб-интерфейсы для клиентов.
+            </p>
+          </div>
+
+          <!-- Web Card 6 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+              </div>
+              <span class="service-badge">Telegram TMA</span>
+            </div>
+            <h3 class="service-title">Telegram Web Apps (TMA)</h3>
+            <p class="service-desc">
+              Мини-приложения внутри Telegram для бесшовного оформления заказов, записи на прием и работы с клиентами.
+            </p>
+          </div>
+
+          <!-- Web Card 7 -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </div>
+              <span class="service-badge">Full Integration</span>
+            </div>
+            <h3 class="service-title">Интеграции и связка систем</h3>
+            <p class="service-desc">
+              Подключение сайтов к CRM (AmoCRM, Bitrix24), Telegram-ботам, Google Sheets, почтовым сервисам и веб-хукам.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         6.1 НЕ ПРОСТО САЙТ. НЕ ПРОСТО БОТ. (SYNERGY)
+         ================================================== -->
+    <section id="synergy" class="section section-bordered bg-subtle">
+      <div class="container-custom">
+        <div class="synergy-card">
+          <div class="synergy-header text-center max-w-2xl mx-auto">
+            <span class="section-tag">Системный эффект</span>
+            <h2 class="section-title">Не просто сайт. Не просто бот.</h2>
+            <p class="section-subtitle">
+              Я создаю цифровые системы для бизнеса, где веб-разработка, AI и CRM работают как один слаженный механизм.
+            </p>
+          </div>
+
+          <div class="synergy-chains">
+            <!-- Chain 1: Web to CRM -->
+            <div class="synergy-chain-box">
+              <div class="chain-badge">
+                <span class="chain-dot"></span>
+                <span>Канал 1: Веб-сайт и платный трафик</span>
+              </div>
+              <div class="chain-flow">
+                <div class="chain-step">
+                  <span class="chain-step-title">Сайт</span>
+                  <span class="chain-step-sub">Конверсионный визит</span>
+                </div>
+                <div class="chain-arrow">→</div>
+                <div class="chain-step">
+                  <span class="chain-step-title">Заявка</span>
+                  <span class="chain-step-sub">Входящий лид</span>
+                </div>
+                <div class="chain-arrow">→</div>
+                <div class="chain-step highlight">
+                  <span class="chain-step-title">AI-квалификация</span>
+                  <span class="chain-step-sub">Уточнение запроса</span>
+                </div>
+                <div class="chain-arrow">→</div>
+                <div class="chain-step">
+                  <span class="chain-step-title">CRM</span>
+                  <span class="chain-step-sub">Карточка клиента</span>
+                </div>
+                <div class="chain-arrow">→</div>
+                <div class="chain-step final">
+                  <span class="chain-step-title">Менеджер</span>
+                  <span class="chain-step-sub">Готовая сделка</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chain 2: Messengers to CRM -->
+            <div class="synergy-chain-box">
+              <div class="chain-badge">
+                <span class="chain-dot"></span>
+                <span>Канал 2: Мессенджеры и соцсети</span>
+              </div>
+              <div class="chain-flow">
+                <div class="chain-step">
+                  <span class="chain-step-title">Telegram / Direct</span>
+                  <span class="chain-step-sub">Первое сообщение</span>
+                </div>
+                <div class="chain-arrow">→</div>
+                <div class="chain-step highlight">
+                  <span class="chain-step-title">AI-ассистент</span>
+                  <span class="chain-step-sub">Ответ за 3 секунды</span>
+                </div>
+                <div class="chain-arrow">→</div>
+                <div class="chain-step">
+                  <span class="chain-step-title">Сбор данных</span>
+                  <span class="chain-step-sub">Квалификация потребностей</span>
+                </div>
+                <div class="chain-arrow">→</div>
+                <div class="chain-step">
+                  <span class="chain-step-title">CRM / Sheets</span>
+                  <span class="chain-step-sub">Запись контактов</span>
+                </div>
+                <div class="chain-arrow">→</div>
+                <div class="chain-step final">
+                  <span class="chain-step-title">Продажа</span>
+                  <span class="chain-step-sub">Теплый клиент</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="synergy-footer text-center">
+            <p class="synergy-conclusion">
+              Бизнес получает не разрозненный набор сервисов, а единый управляемый конвейер продаж: от клика по рекламе до денег в кассе.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         7. КАК ЭТО РАБОТАЕТ (TIMELINE)
+         ================================================== -->
+    <section class="section section-bordered bg-subtle">
+      <div class="container-custom">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-tag">Методология внедрения</span>
+          <h2 class="section-title">Как я строю автоматизацию</h2>
+          <p class="section-subtitle">
+            Прозрачный пошаговый процесс от глубокого аудита до постоянной оптимизации.
+          </p>
+        </div>
+
+        <!-- Horizontal Timeline on Desktop / Vertical on Mobile -->
+        <div class="timeline-wrapper">
+          <div class="timeline-track"></div>
+          <div class="timeline-steps">
+            <!-- Stage 01 -->
+            <div class="timeline-step">
+              <div class="step-marker">
+                <span class="step-num">01</span>
+              </div>
+              <div class="step-content">
+                <div class="step-badge">Этап 01</div>
+                <h3 class="step-title">Анализ бизнеса</h3>
+                <p class="step-desc">
+                  Изучаю, как сейчас приходят заявки и как их обрабатывает команда.
+                </p>
+              </div>
+            </div>
+
+            <!-- Stage 02 -->
+            <div class="timeline-step">
+              <div class="step-marker">
+                <span class="step-num">02</span>
+              </div>
+              <div class="step-content">
+                <div class="step-badge">Этап 02</div>
+                <h3 class="step-title">Проектирование логики</h3>
+                <p class="step-desc">
+                  Продумываю путь клиента, вопросы, квалификацию и точки передачи менеджеру.
+                </p>
+              </div>
+            </div>
+
+            <!-- Stage 03 -->
+            <div class="timeline-step">
+              <div class="step-marker">
+                <span class="step-num">03</span>
+              </div>
+              <div class="step-content">
+                <div class="step-badge">Этап 03</div>
+                <h3 class="step-title">AI-система</h3>
+                <p class="step-desc">
+                  Создаю AI-ассистента и логику обработки входящих сообщений.
+                </p>
+              </div>
+            </div>
+
+            <!-- Stage 04 -->
+            <div class="timeline-step">
+              <div class="step-marker">
+                <span class="step-num">04</span>
+              </div>
+              <div class="step-content">
+                <div class="step-badge">Этап 04</div>
+                <h3 class="step-title">Интеграции</h3>
+                <p class="step-desc">
+                  Подключаю Telegram, сайт, CRM, Google Sheets и другие сервисы.
+                </p>
+              </div>
+            </div>
+
+            <!-- Stage 05 -->
+            <div class="timeline-step">
+              <div class="step-marker">
+                <span class="step-num">05</span>
+              </div>
+              <div class="step-content">
+                <div class="step-badge">Этап 05</div>
+                <h3 class="step-title">Запуск</h3>
+                <p class="step-desc">
+                  Система начинает обрабатывать реальные заявки.
+                </p>
+              </div>
+            </div>
+
+            <!-- Stage 06 -->
+            <div class="timeline-step">
+              <div class="step-marker">
+                <span class="step-num">06</span>
+              </div>
+              <div class="step-content">
+                <div class="step-badge">Этап 06</div>
+                <h3 class="step-title">Оптимизация</h3>
+                <p class="step-desc">
+                  После запуска улучшаю сценарии и логику на основе реального использования.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         8. СЦЕНАРИИ АВТОМАТИЗАЦИИ (CASES)
+         ================================================== -->
+    <section id="scenarios" class="section">
+      <div class="container-custom">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-tag">Практические кейсы</span>
+          <h2 class="section-title">Сценарии автоматизации</h2>
+          <p class="section-subtitle">
+            Примеры того, как AI может работать внутри разных бизнесов.
+          </p>
+        </div>
+
+        <div class="cases-grid">
+          <!-- CASE 1 -->
+          <article class="case-card">
+            <div class="case-header">
+              <div class="case-tag-box">
+                <span class="case-pill">CASE 01</span>
+                <span class="case-domain">Education</span>
+              </div>
+              <h3 class="case-title">Учебный центр</h3>
+            </div>
+
+            <div class="case-body">
+              <div class="case-section">
+                <div class="case-label">
+                  <span class="label-icon problem">✕</span>
+                  <span>Проблема</span>
+                </div>
+                <p class="case-text">
+                  Администраторы вручную отвечают на вопросы о стоимости, длительности и расписании курсов.
+                </p>
+              </div>
+
+              <div class="case-section">
+                <div class="case-label">
+                  <span class="label-icon solution">✓</span>
+                  <span>Решение</span>
+                </div>
+                <p class="case-text">
+                  AI отвечает на типовые вопросы 24/7, определяет интересующий курс, собирает контакт и передает готовый лид администратору.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-schema">
+              <div class="schema-heading">Логическая цепочка воронки:</div>
+              <div class="schema-flow">
+                <span class="schema-node">Лид</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node active">AI</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">Курс</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">Вопросы</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">Контакт</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node highlight">Менеджер</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE 2 -->
+          <article class="case-card">
+            <div class="case-header">
+              <div class="case-tag-box">
+                <span class="case-pill">CASE 02</span>
+                <span class="case-domain">Healthcare</span>
+              </div>
+              <h3 class="case-title">Клиника</h3>
+            </div>
+
+            <div class="case-body">
+              <div class="case-section">
+                <div class="case-label">
+                  <span class="label-icon problem">✕</span>
+                  <span>Проблема</span>
+                </div>
+                <p class="case-text">
+                  Много входящих обращений приходится вручную сортировать.
+                </p>
+              </div>
+
+              <div class="case-section">
+                <div class="case-label">
+                  <span class="label-icon solution">✓</span>
+                  <span>Решение</span>
+                </div>
+                <p class="case-text">
+                  AI определяет интересующую услугу, собирает базовую информацию и передает запрос администратору.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-schema">
+              <div class="schema-heading">Логическая цепочка воронки:</div>
+              <div class="schema-flow">
+                <span class="schema-node">Пациент</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node active">AI</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">Услуга</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">Квалификация</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node highlight">Администратор</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE 3 -->
+          <article class="case-card">
+            <div class="case-header">
+              <div class="case-tag-box">
+                <span class="case-pill">CASE 03</span>
+                <span class="case-domain">Real Estate</span>
+              </div>
+              <h3 class="case-title">Недвижимость</h3>
+            </div>
+
+            <div class="case-body">
+              <div class="case-section">
+                <div class="case-label">
+                  <span class="label-icon problem">✕</span>
+                  <span>Проблема</span>
+                </div>
+                <p class="case-text">
+                  Риелторы тратят время, задавая каждому новому клиенту одни и те же вопросы.
+                </p>
+              </div>
+
+              <div class="case-section">
+                <div class="case-label">
+                  <span class="label-icon solution">✓</span>
+                  <span>Решение</span>
+                </div>
+                <p class="case-text">
+                  AI заранее собирает бюджет, район, количество комнат и тип объекта.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-schema">
+              <div class="schema-heading">Логическая цепочка воронки:</div>
+              <div class="schema-flow">
+                <span class="schema-node">Лид</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node active">AI</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">Бюджет</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">Район</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">Тип объекта</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node highlight">Риелтор</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE 4 -->
+          <article class="case-card">
+            <div class="case-header">
+              <div class="case-tag-box">
+                <span class="case-pill">CASE 04</span>
+                <span class="case-domain">Travel &amp; Tours</span>
+              </div>
+              <h3 class="case-title">Travel-агентство</h3>
+            </div>
+
+            <div class="case-body">
+              <div class="case-section">
+                <div class="case-label">
+                  <span class="label-icon problem">✕</span>
+                  <span>Проблема</span>
+                </div>
+                <p class="case-text">
+                  Менеджеры вручную уточняют направление, даты и бюджет у каждого клиента.
+                </p>
+              </div>
+
+              <div class="case-section">
+                <div class="case-label">
+                  <span class="label-icon solution">✓</span>
+                  <span>Решение</span>
+                </div>
+                <p class="case-text">
+                  AI собирает полный запрос клиента перед передачей менеджеру.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-schema">
+              <div class="schema-heading">Логическая цепочка воронки:</div>
+              <div class="schema-flow">
+                <span class="schema-node">Клиент</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node active">AI</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">Направление</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">Даты</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">Бюджет</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node highlight">Менеджер</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE 5 -->
+          <article class="case-card">
+            <div class="case-header">
+              <div class="case-tag-box">
+                <span class="case-pill">CASE 05</span>
+                <span class="case-domain">B2B &amp; Services</span>
+              </div>
+              <h3 class="case-title">Сайт для бизнеса с автоворонкой</h3>
+            </div>
+
+            <div class="case-body">
+              <div class="case-section">
+                <div class="case-label">
+                  <span class="label-icon problem">✕</span>
+                  <span>Проблема</span>
+                </div>
+                <p class="case-text">
+                  Устаревший сайт давал низкую конверсию, а заявки с почты разбирались с задержкой в несколько часов. До трети лидов остывали.
+                </p>
+              </div>
+
+              <div class="case-section">
+                <div class="case-label">
+                  <span class="label-icon solution">✓</span>
+                  <span>Решение</span>
+                </div>
+                <p class="case-text">
+                  Разработан конверсионный сайт с четким оффером, моментальной передачей лидов в CRM и мгновенным уведомлением дежурного менеджера в Telegram.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-schema">
+              <div class="schema-heading">Логическая цепочка воронки:</div>
+              <div class="schema-flow">
+                <span class="schema-node">Реклама</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node active">Сайт</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">Заявка</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">CRM</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node highlight">Менеджер</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE 6 -->
+          <article class="case-card">
+            <div class="case-header">
+              <div class="case-tag-box">
+                <span class="case-pill">CASE 06</span>
+                <span class="case-domain">EdTech &amp; Real Estate</span>
+              </div>
+              <h3 class="case-title">AI Website с онлайн-квалификацией</h3>
+            </div>
+
+            <div class="case-body">
+              <div class="case-section">
+                <div class="case-label">
+                  <span class="label-icon problem">✕</span>
+                  <span>Проблема</span>
+                </div>
+                <p class="case-text">
+                  Посетители уходили с сайта без заявки, не получая мгновенных ответов на вопросы по индивидуальному расчету стоимости и условиям.
+                </p>
+              </div>
+
+              <div class="case-section">
+                <div class="case-label">
+                  <span class="label-icon solution">✓</span>
+                  <span>Решение</span>
+                </div>
+                <p class="case-text">
+                  В сайт интегрирован AI-консультант, который моментально отвечает на вопросы, квалифицирует бюджет и передает готовый контакт в CRM.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-schema">
+              <div class="schema-heading">Логическая цепочка воронки:</div>
+              <div class="schema-flow">
+                <span class="schema-node">Сайт</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node active">AI-консультант</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">Вопросы</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node">Квалификация</span>
+                <span class="schema-arr">→</span>
+                <span class="schema-node highlight">CRM</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         9. ЧТО ПОЛУЧАЕТ БИЗНЕС
+         ================================================== -->
+    <section class="section section-bordered bg-subtle">
+      <div class="container-custom">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-tag">Ценность для бизнеса</span>
+          <h2 class="section-title">Что получает бизнес</h2>
+          <p class="section-subtitle">
+            Конкретные измеримые изменения в операционных процессах компании.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3 class="benefit-title">Ответы 24/7</h3>
+            <p class="benefit-desc">Ни одно обращение ночью, в праздники или в час пик не останется без мгновенного ответа.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="benefit-title">Быстрая обработка заявок</h3>
+            <p class="benefit-desc">Сокращение времени первого контакта от минут и часов до считанных секунд.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            </div>
+            <h3 class="benefit-title">Меньше ручной работы</h3>
+            <p class="benefit-desc">Освобождение команды от механической перепечатки и однотипных шаблонных ответов.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="3" y1="15" x2="21" y2="15"></line>
+                <line x1="9" y1="3" x2="9" y2="21"></line>
+                <line x1="15" y1="3" x2="15" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="benefit-title">Структурированные данные</h3>
+            <p class="benefit-desc">Вся входящая информация сразу нормализована, разложена по полям и тегам.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="benefit-title">Лучше квалификация лидов</h3>
+            <p class="benefit-desc">Четкий скрипт проверки платежеспособности, сроков и задач до вовлечения сейлза.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+              </svg>
+            </div>
+            <h3 class="benefit-title">Автоматическое обновление CRM</h3>
+            <p class="benefit-desc">Карточки создаются, обновляются и перемещаются по этапам сделки без задержек.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+            </div>
+            <h3 class="benefit-title">Больше времени у менеджеров</h3>
+            <p class="benefit-desc">Фокус внимания сотрудников направлен исключительно на закрытие целевых теплых сделок.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+            </div>
+            <h3 class="benefit-title">Масштабируемая коммуникация</h3>
+            <p class="benefit-desc">Способность обрабатывать кратный рост рекламного трафика без раздувания штата.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         10. ПОЗИЦИОНИРОВАНИЕ (FULL-WIDTH BLACK BLOCK)
+         ================================================== -->
+    <section class="positioning-banner">
+      <div class="positioning-grid-overlay"></div>
+      <div class="container-custom positioning-container text-center">
+        <div class="positioning-badge">
+          <span>nexdenai manifesto</span>
+        </div>
+        <h2 class="positioning-title">
+          AI Automation &amp; Web Developer<br>for Business
+        </h2>
+        <p class="positioning-subtitle">
+          Современные сайты, веб-приложения и AI-системы для бизнеса, где важна каждая входящая заявка.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         11. ФОРМАТ РАБОТЫ (PACKAGES)
+         ================================================== -->
+    <section class="section">
+      <div class="container-custom">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-tag">Сотрудничество</span>
+          <h2 class="section-title">Как я работаю</h2>
+          <p class="section-subtitle">
+            Три понятных формата внедрения в зависимости от зрелости и масштаба ваших процессов.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- STARTER -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <span class="pricing-tier-tag">Базовый старт</span>
+              <h3 class="pricing-title">STARTER</h3>
+              <p class="pricing-summary">Для быстрого закрытия рутины на одном канале.</p>
+            </div>
+            <ul class="pricing-features">
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Простая AI-автоматизация</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Обработка входящих заявок</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Telegram или сайт</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Google Sheets</span>
+              </li>
+            </ul>
+            <div class="pricing-footer">
+              <a href="#contacts" class="btn btn-secondary w-full">Обсудить Starter</a>
+            </div>
+          </div>
+
+          <!-- BUSINESS (Featured) -->
+          <div class="pricing-card featured-card">
+            <div class="featured-badge">Оптимальный выбор</div>
+            <div class="pricing-header">
+              <span class="pricing-tier-tag">Полная воронка</span>
+              <h3 class="pricing-title">BUSINESS</h3>
+              <p class="pricing-summary">Комплексная связка квалификации, CRM и уведомлений.</p>
+            </div>
+            <ul class="pricing-features">
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Продвинутый AI-ассистент</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Квалификация лидов</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>CRM-интеграция</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Уведомления менеджерам</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Кастомная логика бизнеса</span>
+              </li>
+            </ul>
+            <div class="pricing-footer">
+              <a href="#contacts" class="btn btn-primary w-full">Обсудить Business</a>
+            </div>
+          </div>
+
+          <!-- CUSTOM -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <span class="pricing-tier-tag">Масштаб &amp; Архитектура</span>
+              <h3 class="pricing-title">CUSTOM</h3>
+              <p class="pricing-summary">Индивидуальные сценарии и многоуровневая интеграция.</p>
+            </div>
+            <ul class="pricing-features">
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Сложная автоматизация продаж</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Несколько интеграций</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Индивидуальные процессы</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Продвинутая CRM-логика</span>
+              </li>
+            </ul>
+            <div class="pricing-footer">
+              <a href="#contacts" class="btn btn-secondary w-full">Обсудить Custom</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing Disclaimer Note -->
+        <div class="pricing-note-box">
+          <div class="note-line">
+            <strong>Стоимость:</strong> Стоимость зависит от сложности бизнес-процесса, количества интеграций и объема автоматизации.
+          </div>
+          <div class="note-line">
+            <strong>Формат:</strong> Разовая оплата за внедрение + дополнительная ежемесячная поддержка.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         13. ФИНАЛЬНЫЙ CTA
+         ================================================== -->
+    <section class="section cta-section">
+      <div class="container-custom">
+        <div class="cta-card">
+          <div class="cta-inner">
+            <span class="section-tag mb-4">Начать автоматизацию</span>
+            <h2 class="cta-title">
+              Автоматизируем обработку ваших заявок
+            </h2>
+            <p class="cta-text">
+              Если ваш бизнес получает много входящих сообщений, а команда до сих пор обрабатывает их вручную, я могу помочь выстроить AI-систему для автоматизации этого процесса.
+            </p>
+            <div class="cta-actions">
+              <a href="https://t.me/farruuxz" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.37.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+                <span>Связаться в Telegram</span>
+              </a>
+              <button id="open-discuss-modal" class="btn btn-secondary btn-lg">
+                <span>Обсудить проект</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         14. КОНТАКТЫ
+         ================================================== -->
+    <section id="contacts" class="section section-bordered bg-subtle">
+      <div class="container-custom">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-tag">Прямая связь</span>
+          <h2 class="section-title">Контакты</h2>
+          <p class="section-subtitle">
+            Отвечаю оперативно. Готов обсудить архитектуру системы под специфику вашего бизнеса.
+          </p>
+        </div>
+
+        <div class="contact-box max-w-xl mx-auto">
+          <div class="contact-card">
+            <div class="contact-avatar-box">
+              <div class="avatar-ring">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="contact-identity">
+                <div class="identity-name">nexdenai</div>
+                <div class="identity-role">AI Automation &amp; Web Developer</div>
+              </div>
+            </div>
+
+            <div class="contact-methods">
+              <!-- Telegram Link Card -->
+              <a href="https://t.me/farruuxz" target="_blank" rel="noopener noreferrer" class="contact-method-item group">
+                <div class="method-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.37.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                  </svg>
+                </div>
+                <div class="method-info">
+                  <span class="method-label">Telegram</span>
+                  <span class="method-val">@farruuxz</span>
+                </div>
+                <span class="method-action">
+                  <span>Написать</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </a>
+
+              <!-- Copy Handle Button -->
+              <div class="contact-copy-box">
+                <button id="copy-tg-btn" class="copy-tg-btn" aria-label="Скопировать ник в Telegram">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span id="copy-status-text">Скопировать @farruuxz</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================
+       15. FOOTER
+       ================================================== -->
+  <footer class="site-footer">
+    <div class="container-custom">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="logo-link">
+            <span class="logo-mark">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </span>
+            <span class="logo-text">nexden<span class="logo-accent">ai</span></span>
+          </a>
+          <p class="footer-positioning">
+            AI Automation &amp; Web Developer for Business
+          </p>
+          <p class="footer-availability">
+            Создаю современные сайты, веб-приложения и системы AI-автоматизации для бизнеса.
+          </p>
+        </div>
+
+        <div class="footer-nav">
+          <div class="footer-col">
+            <span class="footer-col-title">Навигация</span>
+            <ul>
+              <li><a href="#hero">Главная</a></li>
+              <li><a href="#solutions">Решения</a></li>
+              <li><a href="#niches">Для кого</a></li>
+              <li><a href="#scenarios">Сценарии</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Обо мне</span>
+            <ul>
+              <li><a href="#about">Профиль</a></li>
+              <li><a href="#contacts">Контакты</a></li>
+              <li><a href="https://t.me/farruuxz" target="_blank" rel="noopener noreferrer">Telegram @farruuxz</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; <span id="current-year">2026</span> nexdenai. Все права защищены.
+        </div>
+        <div class="footer-badge-clean">
+          Designed with Apple-grade minimalism
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================================================
+       PROJECT DISCUSSION MODAL
+       ================================================== -->
+  <div id="discuss-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <h3 id="modal-title" class="modal-title">Обсудить проект</h3>
+        <button id="close-modal-btn" class="modal-close" aria-label="Закрыть модальное окно">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-desc">
+          Выберите ваше направление, чтобы сформировать готовый запрос для обсуждения:
+        </p>
+
+        <div class="modal-options">
+          <button class="niche-select-btn active" data-niche="Сайт + AI + CRM">
+            <span>Комплекс: Сайт + AI + CRM</span>
+          </button>
+          <button class="niche-select-btn" data-niche="Веб-разработка / Лендинг">
+            <span>Веб-разработка / Лендинг</span>
+          </button>
+          <button class="niche-select-btn" data-niche="Учебный центр">
+            <span>Учебный центр</span>
+          </button>
+          <button class="niche-select-btn" data-niche="Клиника / Стоматология">
+            <span>Клиника / Стоматология</span>
+          </button>
+          <button class="niche-select-btn" data-niche="Недвижимость">
+            <span>Недвижимость</span>
+          </button>
+          <button class="niche-select-btn" data-niche="Автосалон">
+            <span>Автосалон</span>
+          </button>
+          <button class="niche-select-btn" data-niche="Travel-агентство">
+            <span>Travel-агентство</span>
+          </button>
+          <button class="niche-select-btn" data-niche="Beauty / Услуги">
+            <span>Beauty / Услуги</span>
+          </button>
+          <button class="niche-select-btn" data-niche="Другой проект">
+            <span>Другой проект</span>
+          </button>
+        </div>
+
+        <div class="modal-preview-box">
+          <span class="preview-label">Сообщение для Telegram:</span>
+          <p id="preview-text" class="preview-text">
+            Здравствуйте! Хочу обсудить проект для направления: Комплекс: Сайт + AI + CRM.
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="modal-submit-tg" class="btn btn-primary w-full">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.37.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+          </svg>
+          <span>Перейти в Telegram с этим запросом</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="alert" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span id="toast-message">Ник @farruuxz скопирован в буфер</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
